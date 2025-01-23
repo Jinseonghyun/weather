@@ -1,6 +1,7 @@
 package com.weather.controller;
 
 import com.weather.domain.Diary;
+import com.weather.error.InvalidDate;
 import com.weather.service.DiaryService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,9 @@ public class DiaryController {
 
     @GetMapping("/read/diary")
     List<Diary> readDiary(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        if (date.isAfter(LocalDate.ofYearDay(2026, 1))) {
+            throw new InvalidDate();
+        }
         return diaryService.readDiary(date);
     }
 
