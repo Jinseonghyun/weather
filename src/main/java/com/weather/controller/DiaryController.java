@@ -38,4 +38,9 @@ public class DiaryController {
         diaryService.updateDiary(date, text);
     }
 
+    @DeleteMapping("/delete/diary")
+    void deleteDiary(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        diaryService.deleteDaiary(date);
+    }
+
 }
