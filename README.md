@@ -5,4 +5,6 @@
 
 OpenWeath API 를 활용하여 날씨 데이터 가져오기
 
+환경 및 기술 스택 : Java, Spring Boot, JPA, MySQL
+
 ![image](https://github.com/user-attachments/assets/86657e64-489f-46be-98ab-6c68e523cdaf)
